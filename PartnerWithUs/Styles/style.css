@@ -1,0 +1,159 @@
+/* --- Root Variables --- */
+:root {
+    --primary: #96D46C;
+    --text-main: #f1f5f9;
+    --text-muted: #cbd5e1;
+    --border: rgba(255, 255, 255, 0.15);
+    --nav-height: 80px;
+}
+
+/* --- Global Reset & Background --- */
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+}
+
+body { 
+    font-family: 'Inter', -apple-system, sans-serif; 
+    color: var(--text-main);
+    line-height: 1.6;
+    /* Keeps image visible and fixed across the whole page */
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), 
+                url('../../Images/transitlkbg.png'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; 
+    background-repeat: no-repeat;
+    background-color: #000; 
+}
+
+/* --- Navigation --- */
+nav {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    padding: 0 8%; 
+    height: var(--nav-height);
+    background: rgba(15, 23, 42, 0.2); 
+    backdrop-filter: blur(15px); 
+    position: sticky; 
+    top: 0; 
+    z-index: 1000;
+    border-bottom: 1px solid var(--border);
+}
+
+.logo-text {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: -1px;
+}
+
+.logo-text span { color: var(--primary); } /* Green LK */
+
+/* --- Partner Page Layout --- */
+.contact-hero {
+    min-height: calc(100vh - var(--nav-height));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 8%;
+}
+
+.contact-container {
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+}
+
+.contact-container h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.6);
+}
+
+.contact-container h1 span { color: var(--primary); }
+
+.contact-container p {
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+}
+
+/* --- Glassmorphic Form --- */
+.contact-form {
+    background: rgba(0, 0, 0, 0.5); 
+    backdrop-filter: blur(20px);
+    padding: 3rem;
+    border-radius: 24px;
+    border: 1px solid var(--border);
+    text-align: left;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    display: block;
+    color: var(--primary);
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.input-group input, 
+.input-group textarea {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    color: white;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: 0.3s;
+    /* Disables collapsible/resizable behavior */
+    resize: none; 
+}
+
+.input-group input:focus, 
+.input-group textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 15px rgba(150, 212, 108, 0.1);
+}
+
+/* --- Buttons --- */
+.btn {
+    width: 100%; /* Full width for the form button */
+    background: var(--primary); 
+    color: #000; 
+    padding: 1rem;
+    border-radius: 8px; 
+    text-decoration: none; 
+    font-weight: 700;
+    display: inline-block; 
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    text-decoration: none;
+    color: var(--text-main);
+    border: 1px solid var(--border);
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
