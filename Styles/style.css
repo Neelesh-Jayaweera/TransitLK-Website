@@ -199,6 +199,8 @@ nav {
     backdrop-filter: blur(10px);
     height: fit-content;
     align-self: center;
+    white-space: nowrap;
+    width: max-content;
 }
 
 .btn:hover {
@@ -253,4 +255,5 @@ footer {
         from { background-position: 0 0, 0 0, 0 0; }
         to { background-position: 0 0, 0 40px, 40px 0; }
     }
+
 }
