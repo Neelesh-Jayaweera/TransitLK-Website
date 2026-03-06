@@ -9,45 +9,87 @@
 </head>
 <body>
 
-    <nav>
-        <div class="logo-container">
-            <a href="../index.html"><img src="../Images/transitLKLogo.png" alt="TransitLK Logo" class="nav-logo"></a>
-        </div>
-        <div class="nav-links">
-            <a href="../index.html" class="btn" style="padding: 0.6rem 1.5rem;">Back to Home</a>
-        </div>
-    </nav>
+<nav>
+    <div class="logo-container">
+        <a href="../index.html"><img src="../Images/transitLKLogo.png" alt="TransitLK Logo" class="nav-logo"></a>
+    </div>
+    <a href="../index.html" class="nav-btn">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        Back to Home
+    </a>
+</nav>
 
-    <section class="contact-hero">
-        <div class="contact-container">
-            <h1>Partner with <span style="color: #96D46C;">TransitLK</span></h1>
-            <p>Join us in building Sri Lanka's first unified mobility intelligence network.</p>
-            
-            <form class="contact-form">
+<section class="pwu-hero">
+    <div class="pwu-container reveal">
+
+        <div class="pwu-eyebrow">
+            <span class="eyebrow-dot"></span>
+            Partnerships &middot; TransitLK
+        </div>
+
+        <h1>Partner with <span class="accent">TransitLK</span></h1>
+        <p>Join us in building Sri Lanka's first unified mobility intelligence network.</p>
+
+        <div class="pwu-form">
+            <form>
                 <div class="input-group">
-                    <label>Email Address</label>
-                    <input type="email" placeholder="name@company.com" required>
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="name@company.com" required>
                 </div>
-                
+
                 <div class="input-group">
-                    <label>Short Message</label>
-                    <textarea rows="5" placeholder="Tell us how you'd like to collaborate..." required></textarea>
+                    <label for="message">Short Message</label>
+                    <textarea id="message" rows="5" placeholder="Tell us how you'd like to collaborate..." required></textarea>
                 </div>
-                
-                <button type="submit" class="btn">Send Proposal</button>
+
+                <button type="submit" class="submit-btn">
+                    Send Proposal
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
             </form>
-        </div>
-    </section>
 
-    <footer>
+            <div class="trust-row">
+                <div class="trust-item">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    Confidential
+                </div>
+                <div class="trust-item">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    Fast Response
+                </div>
+                <div class="trust-item">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    No Commitment
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<footer>
     <div class="footer-content">
-        <p>&copy; 2026 TransitLK by 
+        <p>&copy; 2026 TransitLK by
             <span class="footer-brand">
-                <img src="../Images/vaylenLogo.jpg" alt="Vaylen Logo" class="footer-logo"> 
+                <img src="../Images/vaylenLogo.jpg" alt="Vaylen Logo" class="footer-logo">
                 Vaylen.
             </span>
         </p>
     </div>
-    </footer>
+</footer>
+
+<script>
+    const reveals = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+        entries.forEach((entry, i) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => entry.target.classList.add('visible'), i * 80);
+                io.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => io.observe(el));
+</script>
+
 </body>
 </html>
